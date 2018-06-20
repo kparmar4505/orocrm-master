@@ -4,9 +4,10 @@ source_code:
   image: kishor05/orocrm-master
   volumes:
     - ./../aakroncrm-master/app/config:/var/www/app/config
-    - ./../aakroncrm-master/app/AapKernel.php:/var/www/app/AapKernel.php
+    - ./../aakroncrm-master/app/AppKernel.php:/var/www/app/AppKernel.php
     - ./../aakroncrm-master/src:/var/www/src
     - ./../aakroncrm-master/composer.json:/var/www/composer.json
+    - ./../aakroncrm-master/cash.sh:/var/www/cash.sh
 db:
   image: mysql:5.5
   expose:
