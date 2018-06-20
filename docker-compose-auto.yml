@@ -3,9 +3,10 @@ data:
 source_code:
   image: kishor05/orocrm-master
   volumes:
-    - ./aakroncrm/app/config:/var/www/app/config
-    - ./aakroncrm/app/AapKernel.php:/var/www/app/AapKernel.php
-    - ./aakroncrm/src:/var/www/src  
+    - ./../aakroncrm-master/app/config:/var/www/app/config
+    - ./../aakroncrm-master/app/AapKernel.php:/var/www/app/AapKernel.php
+    - ./../aakroncrm-master/src:/var/www/src
+    - ./../aakroncrm-master/composer.json:/var/www/composer.json
 db:
   image: mysql:5.5
   expose:
@@ -17,6 +18,8 @@ db:
     - MYSQL_PASSWORD=orocrm
   volumes_from:
     - data
+  volumes:
+    - ./../mysql:/var/lib/mysql
 mail:
   image: catatnight/postfix
   expose:
