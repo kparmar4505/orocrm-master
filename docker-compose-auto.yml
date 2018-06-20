@@ -2,7 +2,7 @@ data:
   image: kishor05/orodata-master
 source_code:
   image: kishor05/orocrm-master
-  volume:
+  volumes:
     - ./aakroncrm/app/config:/var/www/app/config
     - ./aakroncrm/app/AapKernel.php:/var/www/app/AapKernel.php
     - ./aakroncrm/src:/var/www/src  
