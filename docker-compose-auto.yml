@@ -2,6 +2,10 @@ data:
   image: kishor05/orodata-master
 source_code:
   image: kishor05/orocrm-master
+  volume:
+    - ./aakroncrm/app/config:/var/www/app/config
+    - ./aakroncrm/app/AapKernel.php:/var/www/app/AapKernel.php
+    - ./aakroncrm/src:/var/www/src  
 db:
   image: mysql:5.5
   expose:
